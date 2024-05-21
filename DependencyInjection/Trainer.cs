@@ -8,18 +8,16 @@ namespace DependencyInjection
 {
     internal class Trainer
     {
-        private readonly ISpeaker speaker;
+        private readonly ISpeaker _speaker;
 
-        public Trainer()
+        public Trainer(ISpeaker speaker)
         {
-            speaker = new QuietSpeaker();
+            _speaker = speaker;
         }
 
         public void BeginTraining()
         {
-            speaker.Speak("Time to sweat");
+            _speaker.Speak("Time to sweat");
         }
-
-
     }
 }
